@@ -10,5 +10,11 @@ namespace NetMonCashSDK.Model
     {
         public String orderId { get; set; }
         public double amount { get; set; }
+
+        public Payment(String orderId, double amount)
+        {
+            this.orderId = orderId;
+            this.amount = amount;
+        }
     }
 }

@@ -83,7 +83,10 @@
     <Compile Include="Model\Oauth.cs" />
     <Compile Include="Model\OrderId.cs" />
     <Compile Include="Model\Payment.cs" />
+    <Compile Include="Model\PaymentCapture.cs" />
+    <Compile Include="Model\PaymentCreator.cs" />
     <Compile Include="Model\PaymentToken.cs" />
+    <Compile Include="Model\Resource.cs" />
     <Compile Include="Model\TokenAuthorization.cs" />
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\TransactionId.cs" />

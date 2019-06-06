@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class OrderId
+    class PaymentCapture: Resource
     {
-        public String orderId { get; set; }
-
-        public OrderId(String orderId)
-        {
-            this.orderId = orderId;
-        }
+        public Payment payment { get; set; }
     }
 }

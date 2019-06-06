@@ -9,5 +9,10 @@ namespace NetMonCashSDK.Model
     class TransactionId
     {
         public String transactionId { get; set; }
+
+        public TransactionId(String transactionId)
+        {
+            this.transactionId = transactionId;
+        }
     }
 }

@@ -29,27 +29,17 @@ namespace NetMonCashSDK
             mode = _mode;
         }
 
-        //public ApiService(String clientId, String clientSecret)
-        //{
-        //    new ApiService(clientId, clientSecret, Constants.SANDBOX);
-        //}
-
-        public async Task<Oauth> getAccessToken()
+        private async Task<Oauth> getAccessToken()
         {
             if (oauth != null && oauth.isExpired() == false)
                 return oauth;
-           
 
             var encodedData = System.Convert.ToBase64String(
                         System.Text.Encoding.GetEncoding("ISO-8859-1")
                           .GetBytes(clientId + ":" + clientSecret)
                         );
             var base64 = "Basic " + encodedData;
-
-            Console.WriteLine(base64);
-
-            var content = new StringContent("scope=read,write&grant_type=client_credentials");
-
+            
             var url = "";
 
             if (mode.Equals(Constants.SANDBOX))
@@ -64,20 +54,103 @@ namespace NetMonCashSDK
             client.DefaultRequestHeaders.Add(Constants.HTTP_ACCEPT_HEADER, Constants.HTTP_APPLICATION_JSON);
             client.DefaultRequestHeaders.Add(Constants.HTTP_AUTHORIZATION_HEADER, base64);
 
-            var res = await client.PostAsync(url, content);
+            var keyValues = new List<KeyValuePair<string, string>>();
+            keyValues.Add(new KeyValuePair<string, string>("scope", "read,write"));
+            keyValues.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+
+            var res = await client.PostAsync(url, new FormUrlEncodedContent(keyValues));
             var resContent = await res.Content.ReadAsStringAsync();
-
-            if (res.StatusCode != HttpStatusCode.OK)
-                throw new MonCashRestException(resContent);
-
-
+            
             oauth = JsonConvert.DeserializeObject<Oauth>(resContent);
 
             return oauth;
         }
 
+        public async Task<String> getAuthorizationOauth()
+        {
+            Oauth oauth = await getAccessToken();
 
-       // public async Task<>
+            return $"{oauth.token_type} {oauth.access_token}";
+        }
+
+
+        public async Task<PaymentCreator> paymentCreator(Payment payment)
+        {
+            var url = "";
+
+            if (mode.Equals(Constants.SANDBOX))
+                url = Constants.REST_SANDBOX_ENDPOINT;
+            else if (mode.Equals(Constants.LIVE))
+                url = Constants.REST_LIVE_ENDPOINT;
+
+            url += Constants.PAYMENT_CREATOR_URI;
+
+            var token = await getAuthorizationOauth();
+
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Add(Constants.HTTP_ACCEPT_HEADER, Constants.HTTP_APPLICATION_JSON);
+            //client.DefaultRequestHeaders.Add(Constants.HTTP_CONTENT_TYPE_HEADER, Constants.HTTP_APPLICATION_JSON);
+            client.DefaultRequestHeaders.Add(Constants.HTTP_AUTHORIZATION_HEADER, token);
+
+            var requestJson = new StringContent(JsonConvert.SerializeObject(payment), Encoding.UTF8, "application/json");
+
+            var res = await client.PostAsync(url, requestJson);
+            var resContent = await res.Content.ReadAsStringAsync();
+            
+            return JsonConvert.DeserializeObject<PaymentCreator>(resContent);
+        }
+
+        public async Task<PaymentCapture> paymentCapture(TransactionId transactionId)
+        {
+            var url = "";
+
+            if (mode.Equals(Constants.SANDBOX))
+                url = Constants.REST_SANDBOX_ENDPOINT;
+            else if (mode.Equals(Constants.LIVE))
+                url = Constants.REST_LIVE_ENDPOINT;
+
+            url += Constants.PAYMENT_TRANSACTION_URI;
+
+            var token = await getAuthorizationOauth();
+
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Add(Constants.HTTP_ACCEPT_HEADER, Constants.HTTP_APPLICATION_JSON);
+            //client.DefaultRequestHeaders.Add(Constants.HTTP_CONTENT_TYPE_HEADER, Constants.HTTP_APPLICATION_JSON);
+            client.DefaultRequestHeaders.Add(Constants.HTTP_AUTHORIZATION_HEADER, token);
+
+            var requestJson = new StringContent(JsonConvert.SerializeObject(transactionId), Encoding.UTF8, "application/json");
+
+            var res = await client.PostAsync(url, requestJson);
+            var resContent = await res.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<PaymentCapture>(resContent);
+        }
+
+        public async Task<PaymentCapture> paymentCapture(OrderId orderId)
+        {
+            var url = "";
+
+            if (mode.Equals(Constants.SANDBOX))
+                url = Constants.REST_SANDBOX_ENDPOINT;
+            else if (mode.Equals(Constants.LIVE))
+                url = Constants.REST_LIVE_ENDPOINT;
+
+            url += Constants.PAYMENT_ORDER_URI;
+
+            var token = await getAuthorizationOauth();
+
+            client.DefaultRequestHeaders.Clear();
+            client.DefaultRequestHeaders.Add(Constants.HTTP_ACCEPT_HEADER, Constants.HTTP_APPLICATION_JSON);
+            //client.DefaultRequestHeaders.Add(Constants.HTTP_CONTENT_TYPE_HEADER, Constants.HTTP_APPLICATION_JSON);
+            client.DefaultRequestHeaders.Add(Constants.HTTP_AUTHORIZATION_HEADER, token);
+
+            var requestJson = new StringContent(JsonConvert.SerializeObject(orderId), Encoding.UTF8, "application/json");
+
+            var res = await client.PostAsync(url, requestJson);
+            var resContent = await res.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<PaymentCapture>(resContent);
+        }
 
 
     }
