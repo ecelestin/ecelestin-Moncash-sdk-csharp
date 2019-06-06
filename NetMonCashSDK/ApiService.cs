@@ -39,7 +39,7 @@ namespace NetMonCashSDK
                           .GetBytes(clientId + ":" + clientSecret)
                         );
             var base64 = "Basic " + encodedData;
-            
+
             var url = "";
 
             if (mode.Equals(Constants.SANDBOX))

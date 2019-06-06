@@ -8,6 +8,6 @@ namespace NetMonCashSDK.Model
 {
     class PaymentCapture: Resource
     {
-        public Payment payment { get; set; }
+        public Transaction payment { get; set; }
     }
 }
