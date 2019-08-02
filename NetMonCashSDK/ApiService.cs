@@ -29,6 +29,7 @@ namespace NetMonCashSDK
             mode = _mode;
         }
 
+
         private async Task<Oauth> getAccessToken()
         {
             if (oauth != null && oauth.isExpired() == false)
@@ -46,6 +47,8 @@ namespace NetMonCashSDK
                 url = Constants.REST_SANDBOX_ENDPOINT;
             else if (mode.Equals(Constants.LIVE))
                 url = Constants.REST_LIVE_ENDPOINT;
+            else
+                throw new ArgumentException($"Mode must be {Constants.SANDBOX} or {Constants.LIVE}");
 
             url += Constants.OAUTH_TOKEN_URI;
             
@@ -82,6 +85,8 @@ namespace NetMonCashSDK
                 url = Constants.REST_SANDBOX_ENDPOINT;
             else if (mode.Equals(Constants.LIVE))
                 url = Constants.REST_LIVE_ENDPOINT;
+            else
+                throw new ArgumentException($"Mode must be {Constants.SANDBOX} or {Constants.LIVE}");
 
             url += Constants.PAYMENT_CREATOR_URI;
 
@@ -100,6 +105,7 @@ namespace NetMonCashSDK
             return JsonConvert.DeserializeObject<PaymentCreator>(resContent);
         }
 
+
         public async Task<PaymentCapture> paymentCapture(TransactionId transactionId)
         {
             var url = "";
@@ -108,6 +114,8 @@ namespace NetMonCashSDK
                 url = Constants.REST_SANDBOX_ENDPOINT;
             else if (mode.Equals(Constants.LIVE))
                 url = Constants.REST_LIVE_ENDPOINT;
+            else
+                throw new ArgumentException($"Mode must be {Constants.SANDBOX} or {Constants.LIVE}");
 
             url += Constants.PAYMENT_TRANSACTION_URI;
 
@@ -134,6 +142,8 @@ namespace NetMonCashSDK
                 url = Constants.REST_SANDBOX_ENDPOINT;
             else if (mode.Equals(Constants.LIVE))
                 url = Constants.REST_LIVE_ENDPOINT;
+            else
+                throw new ArgumentException($"Mode must be {Constants.SANDBOX} or {Constants.LIVE}");
 
             url += Constants.PAYMENT_ORDER_URI;
 

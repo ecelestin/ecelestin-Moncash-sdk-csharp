@@ -10,13 +10,19 @@ namespace NetMonCashSDK.Model
     class PaymentCreator: Resource
     {
         public PaymentToken payment_token { get; set; }
+        public String mode { get; set; }
 
         public String redirectUri()
         {
             if (payment_token == null)
                 throw new MonCashRestException("paymentToken must not be null");
 
-            return $"{Constants.REDIRECT_URI}?token={payment_token.token}";
+            if(mode.Equals(Constants.SANDBOX))
+                return $"{Constants.SANDBOX_REDIRECT + Constants.GATE_WAY_URI}?token={payment_token.token}";
+            else if(mode.Equals(Constants.LIVE_REDIRECT))
+                return $"{Constants.LIVE_REDIRECT}?token={payment_token.token}";
+            else
+                throw new MonCashRestException($"Mode must be {Constants.SANDBOX} or {Constants.LIVE}");
         }
     }
 }
