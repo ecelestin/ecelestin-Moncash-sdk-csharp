@@ -79,7 +79,7 @@ namespace NetMonCashSDK.Tests
         {
             try
             {
-                PaymentCapture capture =  apiService.paymentCapture(new TransactionId("1680164793")).Result;
+                PaymentCapture capture =  apiService.paymentCapture(new TransactionId("12874819")).Result;
 
                 Console.WriteLine("\nTest PaymentCapture by TransactionId\n");
 
@@ -109,7 +109,7 @@ namespace NetMonCashSDK.Tests
         {
             try
             {
-                PaymentCapture capture = apiService.paymentCapture(new OrderId("1555952605")).Result;
+                PaymentCapture capture = apiService.paymentCapture(new OrderId("9876543210")).Result;
 
                 Console.WriteLine("\nTest PaymentCapture by OrderId\n");
 
