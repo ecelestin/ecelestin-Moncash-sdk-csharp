@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetMonCashSDK", "NetMonCashSDK\NetMonCashSDK.csproj", "{F665A0FC-DA80-4AD1-8C8B-98A40A69FC13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetMonCashSDK.Test", "NetMonCashSDK.Test\NetMonCashSDK.Test.csproj", "{92932E03-A450-44D1-88E5-EC57E911C019}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F665A0FC-DA80-4AD1-8C8B-98A40A69FC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F665A0FC-DA80-4AD1-8C8B-98A40A69FC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F665A0FC-DA80-4AD1-8C8B-98A40A69FC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92932E03-A450-44D1-88E5-EC57E911C019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92932E03-A450-44D1-88E5-EC57E911C019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92932E03-A450-44D1-88E5-EC57E911C019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92932E03-A450-44D1-88E5-EC57E911C019}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

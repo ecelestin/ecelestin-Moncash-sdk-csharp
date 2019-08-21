@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class Transaction
+    public class Transaction
     {
         public String reference { get; set; }
         public String message { get; set; }

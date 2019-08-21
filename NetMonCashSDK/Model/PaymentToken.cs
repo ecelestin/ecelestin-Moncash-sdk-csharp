@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class PaymentToken
+    public class PaymentToken
     {
         public String token { get; set; }
         public String created { get; set; }

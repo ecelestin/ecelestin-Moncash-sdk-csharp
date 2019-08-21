@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/ecelestin/ecelestin-Moncash-sdk-csharp</projectUrl>
+    <iconUrl>https://github.com/ecelestin/ecelestin-Moncash-sdk-csharp/blob/master/moncash.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Payment Request Creator | Transaction informations usin TrxId number or OrderId number</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>.NET MonCash Cash Haiti Digicel</tags>
+  </metadata>
+</package>

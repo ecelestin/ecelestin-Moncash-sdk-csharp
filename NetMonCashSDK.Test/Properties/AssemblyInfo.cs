@@ -1,16 +1,15 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mon Cash .Net SDK")]
-[assembly: AssemblyDescription("Mon Cash SDK | Create payment request | Retrieve informations about transaction using the TransactionId number or the OrderId numbre")]
+[assembly: AssemblyTitle("NetMonCashSDK.Test")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Digicel Group")]
-[assembly: AssemblyProduct("NetMonCashSDK")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("NetMonCashSDK.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f665a0fc-da80-4ad1-8c8b-98a40a69fc13")]
+[assembly: Guid("92932e03-a450-44d1-88e5-ec57e911c019")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -35,5 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: NeutralResourcesLanguage("en-US")]
-

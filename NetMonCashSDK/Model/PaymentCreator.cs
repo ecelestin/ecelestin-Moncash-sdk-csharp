@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class PaymentCreator: Resource
+    public class PaymentCreator: Resource
     {
         public PaymentToken payment_token { get; set; }
         public String mode { get; set; }

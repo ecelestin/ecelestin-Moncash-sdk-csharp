@@ -12,7 +12,7 @@ using System.Net;
 
 namespace NetMonCashSDK
 {
-    class ApiService
+    public class ApiService
     {
         public static readonly HttpClient client = new HttpClient();
 

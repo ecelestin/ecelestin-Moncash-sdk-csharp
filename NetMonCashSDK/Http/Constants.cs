@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Http
 {
-    class Constants
+    public class Constants
     {
         public static String HTTP_CONTENT_TYPE_HEADER { get { return "Content-Type"; } }
         public static String HTTP_AUTHORIZATION_HEADER { get { return "Authorization"; } }

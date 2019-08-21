@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class Oauth
+    public class Oauth
     {
         public String access_token { get; set; }
         public String token_type { get; set; }

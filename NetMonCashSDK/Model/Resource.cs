@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class Resource
+    public class Resource
     {
         public long timestamp { get; set; }
         public String status { get; set; }

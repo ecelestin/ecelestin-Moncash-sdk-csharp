@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class PaymentCapture: Resource
+    public class PaymentCapture: Resource
     {
         public Transaction payment { get; set; }
     }

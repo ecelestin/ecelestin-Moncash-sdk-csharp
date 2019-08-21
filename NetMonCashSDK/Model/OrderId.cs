@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetMonCashSDK.Model
 {
-    class OrderId
+    public class OrderId
     {
         public String orderId { get; set; }
 
