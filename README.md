@@ -1,6 +1,6 @@
 
 ![MonCash Logo](https://bitbucket.org/moncashsdk/c-moncash-sdk/raw/f6329f078c0449a8f1781de8ccb7e4cecdde29f9/moncash.jpg)
-# Mon Cash C# SDK
+# Mon Cash .NET SDK
 
 The SDK is a C# Class Library allowing users to:
 * Create a payment request and retrieve a token to redirect client to the Mon Cash Gateway to complete payment.
