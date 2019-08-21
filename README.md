@@ -5,10 +5,23 @@ The SDK is a C# Class Library allowing users to:
 * Retrive informations about a Transaction using the Transaction ID number or the Order ID nuber.
 
 ## Version
-
+1.0.0
 
 ## Importing into Visual Studio
+### Nuget
+#### Package Manager
+`Install-Package MonCashSDK.NET -Version 1.0.0`
 
+[More details here](https://www.nuget.org/packages/MonCashSDK.NET/)
+
+### GitHub
+* Clone the repository
+* In the Solution Explorer, Right-Click on your Solution
+* Point to Add
+* Click Existing Project
+* Navigate to the directory where you cloned the SDK from Github
+* Select the Solutions file and click open
+* Finally, Add the NetMonCashSDK Prject as a Reference to your own project
 
 ## Note
 
