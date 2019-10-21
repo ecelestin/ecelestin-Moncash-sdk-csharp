@@ -7,12 +7,12 @@ The SDK is a C# Class Library allowing users to:
 * Retrive informations about a Transaction using the Transaction ID number or the Order ID nuber.
 
 ## Version
-1.0.0
+1.1.0
 
 ## Importing into Visual Studio
 ### Nuget
 #### Package Manager
-`Install-Package MonCashSDK.NET -Version 1.0.0`
+`Install-Package MonCashSDK.NET -Version 1.1.0`
 
 [More details here](https://www.nuget.org/packages/MonCashSDK.NET/)
 
