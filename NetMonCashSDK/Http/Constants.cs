@@ -18,9 +18,9 @@ namespace NetMonCashSDK.Http
         public static String PAYMENT_TRANSACTION_URI { get { return "/v1/RetrieveTransactionPayment"; } }
         public static String PAYMENT_ORDER_URI { get { return "/v1/RetrieveOrderPayment"; } }
 
-        public static String REST_SANDBOX_ENDPOINT { get { return "http://200.113.192.182:8080/Api"; } }
+        public static String REST_SANDBOX_ENDPOINT { get { return "https://sandbox.moncashbutton.digicelgroup.com/Api"; } }
         public static String REST_LIVE_ENDPOINT { get { return "https://moncashbutton.digicelgroup.com/Api"; } }
-        public static String SANDBOX_REDIRECT { get { return "http://200.113.192.182:8080/Moncash-middleware"; } }
+        public static String SANDBOX_REDIRECT { get { return "https://sandbox.moncashbutton.digicelgroup.com/Moncash-middleware"; } }
         public static String LIVE_REDIRECT { get { return "http://moncashbutton.digicelgroup.com/Moncash-middleware"; } }
         public static String GATE_WAY_URI { get { return "/Payment/Redirect"; } }
 
