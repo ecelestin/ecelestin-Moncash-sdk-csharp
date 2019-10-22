@@ -20,7 +20,7 @@ namespace NetMonCashSDK.Model
             if(mode.Equals(Constants.SANDBOX))
                 return $"{Constants.SANDBOX_REDIRECT + Constants.GATE_WAY_URI}?token={payment_token.token}";
             else if(mode.Equals(Constants.LIVE_REDIRECT))
-                return $"{Constants.LIVE_REDIRECT}?token={payment_token.token}";
+                return $"{Constants.LIVE_REDIRECT + Constants.GATE_WAY_URI}?token={payment_token.token}";
             else
                 throw new MonCashRestException($"Mode must be {Constants.SANDBOX} or {Constants.LIVE}");
         }
